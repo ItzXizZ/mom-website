@@ -144,32 +144,84 @@ h3 {
 .hero {
     background: linear-gradient(135deg, var(--light-green) 0%, var(--white) 100%);
     padding: 5rem 0;
-    text-align: center;
+}
+
+.hero-layout {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
+    text-align: left;
 }
 
 .hero h1 {
     font-size: 3rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.25rem;
     color: var(--primary-green);
 }
 
-.hero-subtitle {
-    font-size: 1.5rem;
+.hero-title-sub {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
     color: var(--secondary-green);
-    font-weight: 500;
-    margin-bottom: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.hero-subtitle-secondary {
+    font-size: 1rem;
+    color: var(--text-light);
     font-style: italic;
+    margin-bottom: 0.75rem;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: var(--warm-gold);
+    font-weight: 600;
+    margin-bottom: 0;
+    letter-spacing: 0.04em;
+}
+
+.hero-divider {
+    width: 60px;
+    height: 3px;
+    background-color: var(--warm-gold);
+    margin: 1.5rem 0 1.75rem;
+    border-radius: 2px;
+}
+
+.hero-section-heading {
+    font-size: 1.4rem;
+    color: var(--primary-green);
+    margin-bottom: 0.75rem;
 }
 
 .hero-text {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--text-dark);
     line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.hero-image-wrap {
+    flex-shrink: 0;
+}
+
+.hero-portrait {
+    width: 300px;
+    height: 380px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 18px;
+    box-shadow: 0 16px 48px rgba(45, 80, 22, 0.18);
+    border: 4px solid var(--white);
+    outline: 2px solid var(--secondary-green);
 }
 
 /* About Section */
@@ -241,7 +293,7 @@ h3 {
 
 .philosophy-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 
@@ -332,10 +384,23 @@ h3 {
     background-color: var(--off-white);
 }
 
+.section-intro {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+}
+
+.service-intro {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
 .supervision-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
 }
 
 .supervision-item {
@@ -385,81 +450,6 @@ h3 {
     border-radius: 5px;
 }
 
-/* Investment Section */
-.investment {
-    padding: 5rem 0;
-    background-color: var(--white);
-}
-
-.investment-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-}
-
-.pricing-table {
-    margin-top: 1.5rem;
-}
-
-.pricing-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.25rem;
-    border-bottom: 1px solid var(--border-color);
-    transition: background-color 0.3s ease;
-}
-
-.pricing-item:hover {
-    background-color: var(--off-white);
-}
-
-.pricing-item:last-child {
-    border-bottom: none;
-}
-
-.service-name {
-    font-weight: 500;
-    color: var(--text-dark);
-}
-
-.price {
-    font-weight: 600;
-    color: var(--secondary-green);
-    font-size: 1.1rem;
-}
-
-.payment-info {
-    background-color: var(--off-white);
-    padding: 2rem;
-    border-radius: 10px;
-}
-
-.payment-info ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 1rem 0;
-}
-
-.payment-info li {
-    padding: 0.75rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.payment-info li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--secondary-green);
-    font-weight: bold;
-}
-
-.payment-info p {
-    margin-top: 1rem;
-    line-height: 1.7;
-}
-
 /* Contact Section */
 .contact {
     padding: 5rem 0;
@@ -467,24 +457,20 @@ h3 {
 }
 
 .contact-content {
-    display: flex;
-    gap: 0;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 3rem;
+    align-items: start;
 }
 
 .contact-info {
-    flex: 2;
-    padding-right: 0;
-}
-
-.consultation-box {
-    flex: 1;
-    margin-left: -4rem;
+    padding-right: 1rem;
 }
 
 .contact-info h3 {
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary-green);
 }
 
 .contact-info h3:first-child {
@@ -492,16 +478,73 @@ h3 {
 }
 
 .contact-info p {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     line-height: 1.8;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--white);
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.contact-icon {
+    font-size: 1.25rem;
+    color: var(--secondary-green);
+    margin-top: 0.1rem;
+    flex-shrink: 0;
+}
+
+.contact-detail-item strong {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-light);
+    margin-bottom: 0.2rem;
+}
+
+.contact-detail-item p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.contact-detail-item a {
+    color: var(--primary-green);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.contact-detail-item a:hover {
+    color: var(--secondary-green);
+    text-decoration: underline;
+}
+
+.contact-info p a {
+    color: var(--primary-green);
+    text-decoration: none;
 }
 
 .consultation-box {
     background-color: var(--white);
     padding: 2.5rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(45, 80, 22, 0.12);
     border-top: 4px solid var(--warm-gold);
+    position: sticky;
+    top: 2rem;
 }
 
 .consultation-box h3 {
@@ -516,27 +559,42 @@ h3 {
 }
 
 .consultation-button {
+    display: block;
     background-color: var(--primary-green);
     color: var(--white);
-    border: none;
-    padding: 1rem 2rem;
+    border: 2px solid var(--primary-green);
+    padding: 0.9rem 2rem;
     font-size: 1rem;
     font-weight: 600;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     font-family: 'Inter', sans-serif;
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
+    text-align: center;
+    text-decoration: none;
 }
 
 .consultation-button:hover {
     background-color: var(--secondary-green);
+    border-color: var(--secondary-green);
     transform: translateY(-2px);
 }
 
 .consultation-button:active {
     transform: translateY(0);
+}
+
+.consultation-button-outline {
+    background-color: transparent;
+    color: var(--primary-green);
+}
+
+.consultation-button-outline:hover {
+    background-color: var(--light-green);
+    color: var(--primary-green);
+    border-color: var(--primary-green);
 }
 
 /* Footer */
@@ -568,12 +626,41 @@ h3 {
         margin: 0 auto;
     }
 
-    .investment-content {
+    .hero-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-divider {
+        margin: 1.5rem auto 1.75rem;
+    }
+
+    .hero-image-wrap {
+        display: flex;
+        justify-content: center;
+        order: -1;
+    }
+
+    .hero-portrait {
+        width: 220px;
+        height: 280px;
+    }
+
+    .philosophy-grid {
         grid-template-columns: 1fr;
     }
 
     .contact-content {
         grid-template-columns: 1fr;
+    }
+
+    .consultation-box {
+        position: static;
     }
 
     .supervision-content {
@@ -648,10 +735,6 @@ h3 {
 
     .container {
         padding: 0 1.5rem;
-    }
-
-    .philosophy-grid {
-        grid-template-columns: 1fr;
     }
 
     .services-grid {

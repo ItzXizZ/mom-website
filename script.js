@@ -72,7 +72,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for fade-in animation
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.philosophy-card, .service-category, .supervision-item, .pricing-item');
+    const animateElements = document.querySelectorAll('.philosophy-card, .service-category, .supervision-item');
     animateElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
